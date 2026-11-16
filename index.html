@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#09090f">
-<title>Sasori's Prompt — Ultimate Prompt Library</title>
+<title>Sasori's Prompt — Ultimate AI Library</title>
 
 <style>
 :root {
@@ -126,6 +126,7 @@ main{
   border-radius:16px;
   padding:23px;
   transition:.2s;
+  min-width:0;
 }
 .prompt-card:hover{
   transform:translateY(-4px);
@@ -155,6 +156,7 @@ summary{
 }
 .prompt-text{
   white-space:pre-wrap;
+  overflow-wrap:anywhere;
   background:#0c0c15;
   padding:15px;
   border-radius:10px;
@@ -220,8 +222,9 @@ footer{
 
 <main>
   <h2 class="section-title">Explorer les prompts</h2>
+
   <div class="stats">
-    <strong id="count">12</strong> prompts disponibles
+    <strong id="count">30</strong> prompts affichés sur 30
   </div>
 
   <div class="filters">
@@ -238,257 +241,7 @@ footer{
     <button class="filter" data-category="Recherche">Recherche</button>
   </div>
 
-  <div class="grid" id="grid">
-
-    <!-- 1 -->
-    <article class="prompt-card" data-category="Productivité">
-      <span class="category">Productivité</span>
-      <h3>Prompt efficace</h3>
-      <p class="description">Obtiens des réponses précises, structurées et pertinentes avec l'IA.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un expert dans le domaine de ma demande.
-
-Ton objectif est de me fournir une réponse claire, précise et structurée.
-
-Avant de répondre, analyse ma demande et identifie les informations essentielles.
-
-Présente ta réponse de manière professionnelle, avec des exemples concrets et des conseils applicables.
-
-Ma demande : [ÉCRIRE ICI]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 2 -->
-    <article class="prompt-card" data-category="Rédaction">
-      <span class="category">Rédaction</span>
-      <h3>Rédacteur professionnel</h3>
-      <p class="description">Transforme tes idées en textes fluides et professionnels.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Tu es un rédacteur professionnel expérimenté.
-
-Réécris le texte que je vais te donner pour le rendre naturel, fluide et captivant.
-
-Respecte le sens original, améliore la structure et élimine les répétitions.
-
-Adapte le ton au public visé.
-
-Voici mon texte : [ÉCRIRE ICI]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 3 -->
-    <article class="prompt-card" data-category="Marketing">
-      <span class="category">Marketing</span>
-      <h3>Stratège marketing</h3>
-      <p class="description">Construis une stratégie marketing claire et efficace.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un expert en marketing digital.
-
-Aide-moi à construire une stratégie marketing complète.
-
-Analyse mon produit, mon audience cible, mes concurrents et mes objectifs.
-
-Propose des actions concrètes, organisées par priorité, avec des exemples.
-
-Mon projet : [DÉCRIRE ICI]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 4 -->
-    <article class="prompt-card" data-category="IA">
-      <span class="category">Intelligence artificielle</span>
-      <h3>Expert en IA</h3>
-      <p class="description">Utilise l'IA comme un véritable assistant spécialisé.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un spécialiste de l'intelligence artificielle.
-
-Explique-moi comment utiliser les meilleurs outils d'IA pour atteindre mon objectif.
-
-Compare les différentes possibilités, explique leurs avantages et propose une méthode étape par étape.
-
-Mon objectif : [ÉCRIRE ICI]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 5 -->
-    <article class="prompt-card" data-category="Programmation">
-      <span class="category">Programmation</span>
-      <h3>Développeur expert</h3>
-      <p class="description">Obtiens de l'aide pour coder comme un développeur professionnel.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un développeur senior expert dans le langage de programmation que je vais te préciser.
-
-Analyse mon besoin et propose une solution propre, optimisée et sécurisée.
-
-Explique chaque étape de ton code et signale les éventuelles erreurs.
-
-Technologie : [LANGAGE]
-Mon projet : [PROJET]
-Mon objectif : [OBJECTIF]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 6 -->
-    <article class="prompt-card" data-category="Études">
-      <span class="category">Études</span>
-      <h3>Professeur particulier</h3>
-      <p class="description">Apprends n'importe quelle matière avec une méthode adaptée.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un excellent professeur particulier.
-
-Explique-moi le sujet suivant avec des mots simples et des exemples concrets.
-
-Commence par les bases, puis augmente progressivement la difficulté.
-
-Termine par un petit quiz pour vérifier ma compréhension.
-
-Matière : [MATIÈRE]
-Sujet : [SUJET]
-Mon niveau : [NIVEAU]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 7 -->
-    <article class="prompt-card" data-category="Créativité">
-      <span class="category">Créativité</span>
-      <h3>Générateur d'idées</h3>
-      <p class="description">Trouve des idées originales et créatives pour tes projets.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Tu es un directeur créatif reconnu pour ton imagination.
-
-Génère 15 idées originales autour de mon projet.
-
-Évite les idées trop classiques et privilégie les concepts innovants, réalisables et mémorables.
-
-Pour chaque idée, donne un titre, une description et son principal avantage.
-
-Mon projet : [PROJET]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 8 -->
-    <article class="prompt-card" data-category="Business">
-      <span class="category">Business</span>
-      <h3>Créateur de business</h3>
-      <p class="description">Transforme une idée en véritable projet entrepreneurial.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un entrepreneur expérimenté et un consultant en stratégie.
-
-Analyse mon idée de business.
-
-Identifie les clients potentiels, les concurrents, les coûts, les sources de revenus et les risques.
-
-Construis un plan d'action réaliste pour lancer ce projet étape par étape.
-
-Mon idée : [IDÉE]
-Mon budget : [BUDGET]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 9 -->
-    <article class="prompt-card" data-category="Réseaux sociaux">
-      <span class="category">Réseaux sociaux</span>
-      <h3>Expert réseaux sociaux</h3>
-      <p class="description">Crée du contenu captivant pour développer ton audience.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un expert en stratégie de réseaux sociaux.
-
-Crée une stratégie de contenu pour développer mon audience.
-
-Propose 10 publications avec des accroches puissantes, des idées de visuels et des appels à l'action.
-
-Adapte le contenu à ma cible et à ma plateforme.
-
-Plateforme : [TIKTOK / INSTAGRAM / YOUTUBE]
-Thématique : [THÈME]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 10 -->
-    <article class="prompt-card" data-category="Recherche">
-      <span class="category">Recherche</span>
-      <h3>Analyste professionnel</h3>
-      <p class="description">Analyse un sujet en profondeur et organise les informations.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un analyste spécialisé dans la recherche.
-
-Étudie le sujet que je vais te donner.
-
-Présente les faits importants, les différentes perspectives, les avantages, les inconvénients et les limites des informations disponibles.
-
-Distingue clairement les faits vérifiés des hypothèses.
-
-Ajoute des sources fiables lorsque tu en utilises.
-
-Sujet : [SUJET]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 11 -->
-    <article class="prompt-card" data-category="Productivité">
-      <span class="category">Productivité</span>
-      <h3>Organisation ultime</h3>
-      <p class="description">Organise tes journées et gagne du temps.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un coach expert en organisation et productivité.
-
-Aide-moi à organiser mes journées de manière intelligente.
-
-Classe mes tâches par priorité, estime le temps nécessaire et construis un planning réaliste.
-
-Prévois des pauses et évite de surcharger mon emploi du temps.
-
-Mes tâches : [TÂCHES]
-Mes disponibilités : [HORAIRES]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-    <!-- 12 -->
-    <article class="prompt-card" data-category="Rédaction">
-      <span class="category">Rédaction</span>
-      <h3>Copywriter professionnel</h3>
-      <p class="description">Écris des textes convaincants qui captent l'attention.</p>
-      <details>
-        <summary>Voir le prompt →</summary>
-        <div class="prompt-text">Agis comme un copywriter professionnel spécialisé dans la persuasion.
-
-Rédige un texte captivant qui attire l'attention dès la première phrase.
-
-Mets en avant les bénéfices, utilise un langage naturel et termine par un appel à l'action efficace.
-
-Évite les promesses exagérées.
-
-Produit ou service : [PRODUIT]
-Public cible : [CLIENTS]
-Objectif : [OBJECTIF]</div>
-        <button class="copy">Copier le prompt</button>
-      </details>
-    </article>
-
-  </div>
-
+  <div class="grid" id="grid"></div>
   <div class="empty" id="empty">Aucun prompt trouvé.</div>
 </main>
 
@@ -499,62 +252,623 @@ Objectif : [OBJECTIF]</div>
 </footer>
 
 <script>
-let category = "Tous";
+
+const prompts = [
+
+{
+category:"Productivité",
+title:"Prompt efficace",
+description:"Obtiens des réponses précises, structurées et pertinentes.",
+prompt:`Agis comme un expert dans le domaine de ma demande.
+
+Ton objectif est de me fournir une réponse claire, précise et structurée.
+
+Avant de répondre, analyse ma demande et identifie les informations essentielles.
+
+Présente ta réponse de manière professionnelle, avec des exemples concrets et des conseils applicables.
+
+Ma demande : [ÉCRIRE ICI]`
+},
+
+{
+category:"Productivité",
+title:"Organisation ultime",
+description:"Organise tes journées et gagne du temps.",
+prompt:`Agis comme un coach expert en organisation et productivité.
+
+Aide-moi à organiser mes journées de manière intelligente.
+
+Classe mes tâches par priorité, estime le temps nécessaire et construis un planning réaliste.
+
+Prévois des pauses et évite de surcharger mon emploi du temps.
+
+Mes tâches : [TÂCHES]
+Mes disponibilités : [HORAIRES]`
+},
+
+{
+category:"Productivité",
+title:"Gestionnaire de temps",
+description:"Apprends à mieux gérer ton temps et tes priorités.",
+prompt:`Agis comme un spécialiste de la gestion du temps.
+
+Analyse mes habitudes et mes tâches.
+
+Identifie les pertes de temps, les priorités et les activités importantes.
+
+Construis une méthode simple pour améliorer mon efficacité chaque jour.
+
+Mes difficultés : [DIFFICULTÉS]
+Mes objectifs : [OBJECTIFS]`
+},
+
+{
+category:"Rédaction",
+title:"Rédacteur professionnel",
+description:"Transforme tes idées en textes fluides et professionnels.",
+prompt:`Tu es un rédacteur professionnel expérimenté.
+
+Réécris le texte que je vais te donner pour le rendre naturel, fluide et captivant.
+
+Respecte le sens original, améliore la structure et élimine les répétitions.
+
+Adapte le ton au public visé.
+
+Voici mon texte : [ÉCRIRE ICI]`
+},
+
+{
+category:"Rédaction",
+title:"Copywriter professionnel",
+description:"Écris des textes convaincants qui captent l'attention.",
+prompt:`Agis comme un copywriter professionnel spécialisé dans la persuasion.
+
+Rédige un texte captivant qui attire l'attention dès la première phrase.
+
+Mets en avant les bénéfices, utilise un langage naturel et termine par un appel à l'action efficace.
+
+Produit ou service : [PRODUIT]
+Public cible : [CLIENTS]
+Objectif : [OBJECTIF]`
+},
+
+{
+category:"Rédaction",
+title:"Correcteur impeccable",
+description:"Corrige les fautes et améliore la qualité de tes textes.",
+prompt:`Agis comme un correcteur professionnel de français.
+
+Corrige les fautes d'orthographe, de grammaire, de conjugaison et de ponctuation.
+
+Améliore les phrases maladroites sans modifier le sens de mon texte.
+
+Fournis d'abord la version corrigée, puis explique les principales corrections.
+
+Mon texte : [COLLER LE TEXTE]`
+},
+
+{
+category:"Marketing",
+title:"Stratège marketing",
+description:"Construis une stratégie marketing claire et efficace.",
+prompt:`Agis comme un expert en marketing digital.
+
+Aide-moi à construire une stratégie marketing complète.
+
+Analyse mon produit, mon audience cible, mes concurrents et mes objectifs.
+
+Propose des actions concrètes, organisées par priorité, avec des exemples.
+
+Mon projet : [DÉCRIRE ICI]`
+},
+
+{
+category:"Marketing",
+title:"Expert SEO",
+description:"Améliore le référencement naturel de ton site.",
+prompt:`Agis comme un consultant SEO expérimenté.
+
+Analyse mon site ou mon contenu et propose une stratégie pour améliorer son référencement naturel.
+
+Identifie les mots-clés pertinents, les intentions de recherche, les améliorations techniques et les opportunités de contenu.
+
+Classe tes recommandations par priorité.
+
+Mon site : [URL]
+Mon activité : [ACTIVITÉ]`
+},
+
+{
+category:"Marketing",
+title:"Créateur de publicité",
+description:"Imagine des campagnes publicitaires percutantes.",
+prompt:`Agis comme un directeur de création publicitaire.
+
+Imagine trois concepts publicitaires originaux pour mon produit.
+
+Pour chaque concept, propose une accroche, un message principal, une idée de visuel et un appel à l'action.
+
+Adapte le message à mon audience.
+
+Produit : [PRODUIT]
+Audience : [CIBLE]
+Plateforme : [PLATEFORME]`
+},
+
+{
+category:"IA",
+title:"Expert en IA",
+description:"Utilise l'intelligence artificielle comme un assistant spécialisé.",
+prompt:`Agis comme un spécialiste de l'intelligence artificielle.
+
+Explique-moi comment utiliser les outils d'IA pour atteindre mon objectif.
+
+Compare les différentes possibilités, explique leurs avantages et propose une méthode étape par étape.
+
+Mon objectif : [ÉCRIRE ICI]`
+},
+
+{
+category:"IA",
+title:"Maître des prompts",
+description:"Transforme une instruction simple en prompt avancé.",
+prompt:`Tu es un ingénieur expert en prompt engineering.
+
+Transforme mon idée en un prompt extrêmement précis et efficace.
+
+Ton prompt doit contenir :
+- Un rôle précis.
+- Un contexte détaillé.
+- Un objectif clair.
+- Des instructions structurées.
+- Des contraintes.
+- Un format de réponse attendu.
+
+Mon idée : [ÉCRIRE ICI]
+
+Donne-moi uniquement le prompt final, prêt à copier.`
+},
+
+{
+category:"IA",
+title:"Comparateur d'outils IA",
+description:"Trouve les meilleurs outils d'intelligence artificielle.",
+prompt:`Agis comme un consultant spécialisé dans les outils d'intelligence artificielle.
+
+Aide-moi à trouver les outils les plus adaptés à mon besoin.
+
+Compare leurs fonctionnalités, leurs avantages, leurs limites, leurs tarifs et leurs conditions d'utilisation.
+
+Privilégie les informations récentes et signale les éléments que tu ne peux pas vérifier.
+
+Mon besoin : [BESOIN]`
+},
+
+{
+category:"Programmation",
+title:"Développeur expert",
+description:"Obtiens de l'aide pour coder comme un développeur professionnel.",
+prompt:`Agis comme un développeur senior expert dans le langage de programmation demandé.
+
+Analyse mon besoin et propose une solution propre, optimisée et sécurisée.
+
+Explique chaque étape de ton code et signale les éventuelles erreurs.
+
+Technologie : [LANGAGE]
+Mon projet : [PROJET]
+Mon objectif : [OBJECTIF]`
+},
+
+{
+category:"Programmation",
+title:"Détecteur de bugs",
+description:"Trouve et corrige les erreurs dans ton code.",
+prompt:`Agis comme un ingénieur logiciel spécialisé dans le débogage.
+
+Analyse attentivement le code que je vais te fournir.
+
+Identifie les erreurs, explique leurs causes et propose une correction.
+
+Ne modifie pas les parties qui fonctionnent déjà.
+
+Fournis le code corrigé complet et explique les changements.
+
+Mon code :
+[COLLER LE CODE]`
+},
+
+{
+category:"Programmation",
+title:"Créateur de site web",
+description:"Construis un site web adapté à ton projet.",
+prompt:`Agis comme un développeur web full-stack et un designer UI/UX.
+
+Aide-moi à créer un site web moderne, responsive et esthétique.
+
+Définis sa structure, ses pages, ses fonctionnalités et son identité visuelle.
+
+Fournis un code clair, organisé et fonctionnel.
+
+Type de site : [TYPE]
+Style souhaité : [STYLE]
+Fonctionnalités : [FONCTIONNALITÉS]`
+},
+
+{
+category:"Études",
+title:"Professeur particulier",
+description:"Apprends n'importe quelle matière avec une méthode adaptée.",
+prompt:`Agis comme un excellent professeur particulier.
+
+Explique-moi le sujet suivant avec des mots simples et des exemples concrets.
+
+Commence par les bases, puis augmente progressivement la difficulté.
+
+Termine par un petit quiz pour vérifier ma compréhension.
+
+Matière : [MATIÈRE]
+Sujet : [SUJET]
+Mon niveau : [NIVEAU]`
+},
+
+{
+category:"Études",
+title:"Créateur de fiches de révision",
+description:"Transforme tes cours en fiches de révision efficaces.",
+prompt:`Agis comme un professeur expert en pédagogie.
+
+Transforme mon cours en une fiche de révision claire et complète.
+
+Organise les informations avec des titres, des définitions, des dates importantes, des exemples et les notions essentielles.
+
+Termine par un résumé et cinq questions de révision.
+
+Mon cours :
+[COLLER LE COURS]`
+},
+
+{
+category:"Études",
+title:"Préparation aux examens",
+description:"Prépare-toi efficacement à un examen.",
+prompt:`Agis comme un professeur spécialisé dans la préparation aux examens.
+
+Construis un programme de révision adapté à mon niveau.
+
+Identifie les notions essentielles, propose des exercices progressifs et teste régulièrement mes connaissances.
+
+Explique mes erreurs sans donner immédiatement toutes les réponses.
+
+Examen : [EXAMEN]
+Date : [DATE]
+Matières : [MATIÈRES]`
+},
+
+{
+category:"Créativité",
+title:"Générateur d'idées",
+description:"Trouve des idées originales et créatives pour tes projets.",
+prompt:`Tu es un directeur créatif reconnu pour ton imagination.
+
+Génère 15 idées originales autour de mon projet.
+
+Évite les idées trop classiques et privilégie les concepts innovants, réalisables et mémorables.
+
+Pour chaque idée, donne un titre, une description et son principal avantage.
+
+Mon projet : [PROJET]`
+},
+
+{
+category:"Créativité",
+title:"Directeur artistique",
+description:"Imagine une identité visuelle professionnelle.",
+prompt:`Agis comme un directeur artistique spécialisé en branding.
+
+Imagine une identité visuelle complète pour mon projet.
+
+Propose :
+- Une palette de couleurs.
+- Une typographie.
+- Un style de logo.
+- Une ambiance visuelle.
+- Des idées de supports graphiques.
+
+Marque : [NOM]
+Secteur : [SECTEUR]
+Style souhaité : [STYLE]`
+},
+
+{
+category:"Créativité",
+title:"Générateur de noms",
+description:"Trouve un nom original pour une marque ou un projet.",
+prompt:`Agis comme un expert en naming et en identité de marque.
+
+Propose 20 noms originaux pour mon projet.
+
+Les noms doivent être mémorables, faciles à prononcer et adaptés à mon univers.
+
+Explique brièvement les meilleures propositions.
+
+Projet : [PROJET]
+Univers : [UNIVERS]
+Style : [STYLE]
+
+Ne prétends pas qu'un nom ou un domaine est disponible sans vérification.`
+},
+
+{
+category:"Business",
+title:"Créateur de business",
+description:"Transforme une idée en véritable projet entrepreneurial.",
+prompt:`Agis comme un entrepreneur expérimenté et un consultant en stratégie.
+
+Analyse mon idée de business.
+
+Identifie les clients potentiels, les concurrents, les coûts, les sources de revenus et les risques.
+
+Construis un plan d'action réaliste pour lancer ce projet étape par étape.
+
+Mon idée : [IDÉE]
+Mon budget : [BUDGET]`
+},
+
+{
+category:"Business",
+title:"Business plan",
+description:"Construis un plan d'affaires structuré.",
+prompt:`Agis comme un consultant en création d'entreprise.
+
+Aide-moi à construire un business plan professionnel.
+
+Présente :
+- Le résumé du projet.
+- L'étude de marché à réaliser.
+- Le positionnement.
+- Le modèle économique.
+- La stratégie commerciale.
+- Les coûts et les prévisions financières.
+- Les principaux risques.
+
+Mon entreprise : [PROJET]
+Marché : [MARCHÉ]
+Budget : [BUDGET]
+
+Distingue les hypothèses des données vérifiées.`
+},
+
+{
+category:"Business",
+title:"Analyse de concurrence",
+description:"Étudie les concurrents et trouve des opportunités.",
+prompt:`Agis comme un analyste stratégique spécialisé en intelligence économique.
+
+Aide-moi à analyser mes concurrents.
+
+Étudie leurs offres, leurs prix, leur positionnement, leur communication et leurs points forts et faibles.
+
+Identifie les opportunités pour me différencier.
+
+Mon activité : [ACTIVITÉ]
+Mes concurrents : [NOMS OU URL]
+
+N'invente aucune donnée et indique les informations à vérifier.`
+},
+
+{
+category:"Réseaux sociaux",
+title:"Expert réseaux sociaux",
+description:"Crée du contenu captivant pour développer ton audience.",
+prompt:`Agis comme un expert en stratégie de réseaux sociaux.
+
+Crée une stratégie de contenu pour développer mon audience.
+
+Propose 10 publications avec des accroches puissantes, des idées de visuels et des appels à l'action.
+
+Adapte le contenu à ma cible et à ma plateforme.
+
+Plateforme : [TIKTOK / INSTAGRAM / YOUTUBE]
+Thématique : [THÈME]`
+},
+
+{
+category:"Réseaux sociaux",
+title:"Viralité TikTok",
+description:"Imagine des concepts de vidéos courtes captivantes.",
+prompt:`Agis comme un spécialiste de la création de contenu TikTok.
+
+Propose 10 concepts de vidéos adaptés à ma niche.
+
+Pour chaque vidéo, donne :
+- Une accroche dans les 3 premières secondes.
+- Un scénario.
+- Les plans à filmer.
+- Le texte à afficher.
+- Une conclusion engageante.
+
+Niche : [NICHE]
+Audience : [AUDIENCE]
+
+Ne garantis pas la viralité.`
+},
+
+{
+category:"Réseaux sociaux",
+title:"Calendrier éditorial",
+description:"Planifie tes publications sur plusieurs semaines.",
+prompt:`Agis comme un social media manager professionnel.
+
+Construis un calendrier éditorial de 30 jours.
+
+Pour chaque jour, propose une idée de publication, un format, une accroche et un objectif.
+
+Varie les contenus éducatifs, divertissants, inspirants et promotionnels.
+
+Plateforme : [PLATEFORME]
+Thématique : [THÉMATIQUE]
+Public : [PUBLIC]`
+},
+
+{
+category:"Recherche",
+title:"Analyste professionnel",
+description:"Analyse un sujet en profondeur et organise les informations.",
+prompt:`Agis comme un analyste spécialisé dans la recherche.
+
+Étudie le sujet que je vais te donner.
+
+Présente les faits importants, les différentes perspectives, les avantages, les inconvénients et les limites des informations disponibles.
+
+Distingue clairement les faits vérifiés des hypothèses.
+
+Ajoute des sources fiables lorsque tu en utilises.
+
+Sujet : [SUJET]`
+},
+
+{
+category:"Recherche",
+title:"Fact-checker",
+description:"Vérifie la fiabilité d'une information.",
+prompt:`Agis comme un journaliste spécialisé dans la vérification des faits.
+
+Examine l'affirmation que je vais te donner.
+
+Recherche les preuves disponibles, identifie les sources originales et compare les informations.
+
+Classe ton analyse en :
+- Confirmé.
+- Faux.
+- Trompeur.
+- Non vérifiable.
+
+Explique ton raisonnement et cite les sources consultées.
+
+Affirmation : [AFFIRMATION]`
+},
+
+{
+category:"Recherche",
+title:"Synthèse intelligente",
+description:"Résume un document sans perdre les informations essentielles.",
+prompt:`Agis comme un expert en analyse et synthèse documentaire.
+
+Analyse le document que je vais te transmettre.
+
+Produis :
+- Un résumé général.
+- Les idées principales.
+- Les informations importantes.
+- Les chiffres et données clés.
+- Les conclusions.
+- Les éventuelles limites.
+
+Respecte le contenu original et n'invente aucune information.
+
+Document :
+[COLLER LE TEXTE]`
+}
+
+];
+
+// Création automatique des cartes
+const grid = document.getElementById("grid");
+
+prompts.forEach(item => {
+  const card = document.createElement("article");
+  card.className = "prompt-card";
+  card.dataset.category = item.category;
+
+  const category = document.createElement("span");
+  category.className = "category";
+  category.textContent = item.category;
+
+  const title = document.createElement("h3");
+  title.textContent = item.title;
+
+  const description = document.createElement("p");
+  description.className = "description";
+  description.textContent = item.description;
+
+  const details = document.createElement("details");
+  const summary = document.createElement("summary");
+  summary.textContent = "Voir le prompt →";
+
+  const promptText = document.createElement("div");
+  promptText.className = "prompt-text";
+  promptText.textContent = item.prompt;
+
+  const copy = document.createElement("button");
+  copy.className = "copy";
+  copy.textContent = "Copier le prompt";
+
+  copy.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(item.prompt);
+      copy.textContent = "✓ Prompt copié !";
+      setTimeout(() => {
+        copy.textContent = "Copier le prompt";
+      }, 1800);
+    } catch {
+      copy.textContent = "Copie non disponible";
+    }
+  });
+
+  details.append(summary, promptText, copy);
+  card.append(category, title, description, details);
+  grid.appendChild(card);
+});
+
+// Recherche et filtres
+let activeCategory = "Tous";
 
 const search = document.getElementById("search");
+const count = document.getElementById("count");
+const empty = document.getElementById("empty");
 const cards = [...document.querySelectorAll(".prompt-card")];
 
-function filterCards(){
-  const query = search.value.toLowerCase();
-  let count = 0;
+function filterCards() {
+  const query = search.value.toLocaleLowerCase("fr");
+  let visibleCount = 0;
 
   cards.forEach(card => {
     const matchesCategory =
-      category === "Tous" || card.dataset.category === category;
+      activeCategory === "Tous" ||
+      card.dataset.category === activeCategory;
+
     const matchesSearch =
-      card.innerText.toLowerCase().includes(query);
+      card.innerText.toLocaleLowerCase("fr").includes(query);
+
     const visible = matchesCategory && matchesSearch;
 
     card.style.display = visible ? "block" : "none";
-    if(visible) count++;
+
+    if (visible) visibleCount++;
   });
 
-  document.getElementById("empty").style.display =
-    count ? "none" : "block";
-
-  document.getElementById("count").textContent = count;
+  count.textContent = visibleCount;
+  empty.style.display = visibleCount ? "none" : "block";
 }
 
 document.querySelectorAll(".filter").forEach(button => {
   button.addEventListener("click", () => {
-    category = button.dataset.category;
+    activeCategory = button.dataset.category;
 
-    document.querySelectorAll(".filter").forEach(b =>
-      b.classList.remove("active")
-    );
+    document.querySelectorAll(".filter").forEach(b => {
+      b.classList.remove("active");
+    });
 
     button.classList.add("active");
     filterCards();
   });
 });
 
-search.addEventListener("input",filterCards);
+search.addEventListener("input", filterCards);
 
-document.querySelectorAll(".copy").forEach(button => {
-  button.addEventListener("click",async()=>{
-    const text = button.parentElement.querySelector(".prompt-text").innerText;
+// Initialisation
+filterCards();
 
-    try{
-      await navigator.clipboard.writeText(text);
-      button.innerText = "✓ Prompt copié !";
-      setTimeout(()=>{
-        button.innerText = "Copier le prompt";
-      },1800);
-    }catch{
-      button.innerText = "Copie non disponible";
-    }
-  });
-});
 </script>
 
 </body>
