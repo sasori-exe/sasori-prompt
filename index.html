@@ -1,199 +1,217 @@
 
-</html>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Promptclean — Bibliothèque de prompts</title>
+<meta name="theme-color" content="#09090f">
+<title>Sasori's Prompt — Ultimate Prompt Library</title>
+
 <style>
 :root {
-  --bg: #09090f;
-  --card: #14141f;
-  --border: #29293b;
-  --purple: #9b7bff;
-  --text: #f5f3ff;
-  --muted: #9694aa;
+  --bg:#09090f;
+  --card:#14141f;
+  --border:#29293b;
+  --purple:#9b7bff;
+  --text:#f5f3ff;
+  --muted:#9694aa;
 }
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Inter, Arial, sans-serif;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
 }
-header {
-  padding: 22px 8%;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header{
+  padding:22px 8%;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
-.logo {
-  font-size: 23px;
-  font-weight: 800;
-  letter-spacing: -1px;
+.logo{
+  font-size:23px;
+  font-weight:900;
+  letter-spacing:-1px;
 }
-.logo span { color: var(--purple); }
-header small { color: var(--muted); }
-.hero {
-  text-align: center;
-  padding: 85px 20px 55px;
+.logo span{color:var(--purple)}
+header small{color:var(--muted)}
+.hero{
+  text-align:center;
+  padding:85px 20px 55px;
 }
-.tag {
-  color: #c4b4ff;
-  background: #21183b;
-  padding: 9px 16px;
-  border-radius: 30px;
-  font-size: 12px;
+.tag{
+  color:#c4b4ff;
+  background:#21183b;
+  padding:9px 16px;
+  border-radius:30px;
+  font-size:12px;
 }
-h1 {
-  font-size: clamp(38px, 7vw, 65px);
-  letter-spacing: -3px;
-  margin: 28px 0 15px;
+h1{
+  font-size:clamp(38px,7vw,65px);
+  letter-spacing:-3px;
+  margin:28px 0 15px;
 }
-h1 span {
-  background: linear-gradient(90deg,#a78bfa,#e0b7ff);
-  color: transparent;
-  background-clip: text;
+h1 span{
+  background:linear-gradient(90deg,#a78bfa,#e0b7ff);
+  color:transparent;
+  background-clip:text;
 }
-.hero p {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.7;
+.hero p{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
 }
-.search {
-  margin: 30px auto 0;
-  max-width: 520px;
+.search{
+  margin:30px auto 0;
+  max-width:520px;
 }
-.search input {
-  width: 100%;
-  padding: 17px 20px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: white;
-  outline: none;
-  font-size: 15px;
+.search input{
+  width:100%;
+  padding:17px 20px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:white;
+  outline:none;
+  font-size:15px;
 }
-.search input:focus { border-color: var(--purple); }
-main {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+.search input:focus{border-color:var(--purple)}
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
 }
-.section-title {
-  font-size: 23px;
-  margin: 20px 0;
+.section-title{
+  font-size:23px;
+  margin:20px 0;
 }
-.filters {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
+.stats{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:22px;
 }
-.filter {
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: #bbb8ca;
-  padding: 10px 16px;
-  border-radius: 30px;
-  cursor: pointer;
+.stats strong{color:#c4b4ff}
+.filters{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
 }
-.filter.active, .filter:hover {
-  background: #33235b;
-  color: white;
-  border-color: var(--purple);
+.filter{
+  border:1px solid var(--border);
+  background:var(--card);
+  color:#bbb8ca;
+  padding:10px 16px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:.2s;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
-  gap: 18px;
+.filter.active,.filter:hover{
+  background:#33235b;
+  color:white;
+  border-color:var(--purple);
 }
-.prompt-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 23px;
-  transition: .2s;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:18px;
 }
-.prompt-card:hover {
-  transform: translateY(-4px);
-  border-color: #8064d9;
+.prompt-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:23px;
+  transition:.2s;
 }
-.category {
-  color: #bba6ff;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.prompt-card:hover{
+  transform:translateY(-4px);
+  border-color:#8064d9;
 }
-.prompt-card h3 {
-  font-size: 20px;
-  margin: 13px 0 9px;
+.category{
+  color:#bba6ff;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
-.description {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 45px;
+.prompt-card h3{
+  font-size:20px;
+  margin:13px 0 9px;
 }
-details { margin-top: 18px; }
-summary {
-  cursor: pointer;
-  color: #c8b7ff;
-  font-size: 14px;
+.description{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+  min-height:45px;
 }
-.prompt-text {
-  white-space: pre-wrap;
-  background: #0c0c15;
-  padding: 15px;
-  border-radius: 10px;
-  color: #ded9ef;
-  font-size: 13px;
-  line-height: 1.7;
-  margin-top: 14px;
+details{margin-top:18px}
+summary{
+  cursor:pointer;
+  color:#c8b7ff;
+  font-size:14px;
 }
-.copy {
-  width: 100%;
-  border: 0;
-  padding: 12px;
-  border-radius: 9px;
-  margin-top: 12px;
-  background: linear-gradient(90deg,#8059db,#a47bff);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+.prompt-text{
+  white-space:pre-wrap;
+  background:#0c0c15;
+  padding:15px;
+  border-radius:10px;
+  color:#ded9ef;
+  font-size:13px;
+  line-height:1.7;
+  margin-top:14px;
 }
-.copy:hover { opacity: .85; }
-.empty {
-  display: none;
-  color: var(--muted);
-  padding: 35px;
-  text-align: center;
+.copy{
+  width:100%;
+  border:0;
+  padding:12px;
+  border-radius:9px;
+  margin-top:12px;
+  background:linear-gradient(90deg,#8059db,#a47bff);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
 }
-footer {
-  text-align: center;
-  padding: 45px 15px;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-  margin-top: 70px;
-  font-size: 13px;
+.copy:hover{opacity:.85}
+.empty{
+  display:none;
+  color:var(--muted);
+  padding:35px;
+  text-align:center;
+}
+footer{
+  text-align:center;
+  padding:45px 15px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  margin-top:70px;
+  font-size:13px;
+}
+@media(max-width:600px){
+  header{padding:18px 5%;flex-wrap:wrap}
+  header small{font-size:11px}
+  .hero{padding:65px 18px 40px}
+  main{padding:16px}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">PROMPT<span>CLEAN</span></div>
-  <small>La bibliothèque de prompts IA</small>
+  <div class="logo">SASORI'S <span>PROMPT</span></div>
+  <small>Your Ultimate Prompt Library</small>
 </header>
 
 <section class="hero">
-  <span class="tag">✦ LA BIBLIOTHÈQUE DE L'INTELLIGENCE ARTIFICIELLE</span>
+  <span class="tag">✦ THE ULTIMATE AI PROMPT LIBRARY</span>
   <h1>Trouvez le <span>prompt parfait.</span></h1>
-  <p>Des prompts soigneusement sélectionnés pour exploiter<br>
-  tout le potentiel de l'intelligence artificielle.</p>
+  <p>
+    Des prompts soigneusement sélectionnés pour exploiter<br>
+    tout le potentiel de l'intelligence artificielle.
+  </p>
   <div class="search">
     <input id="search" type="text"
     placeholder="⌕ Rechercher un prompt...">
@@ -202,6 +220,9 @@ footer {
 
 <main>
   <h2 class="section-title">Explorer les prompts</h2>
+  <div class="stats">
+    <strong id="count">12</strong> prompts disponibles
+  </div>
 
   <div class="filters">
     <button class="filter active" data-category="Tous">Tous</button>
@@ -209,14 +230,21 @@ footer {
     <button class="filter" data-category="Rédaction">Rédaction</button>
     <button class="filter" data-category="Marketing">Marketing</button>
     <button class="filter" data-category="IA">Intelligence artificielle</button>
+    <button class="filter" data-category="Programmation">Programmation</button>
+    <button class="filter" data-category="Études">Études</button>
+    <button class="filter" data-category="Créativité">Créativité</button>
+    <button class="filter" data-category="Business">Business</button>
+    <button class="filter" data-category="Réseaux sociaux">Réseaux sociaux</button>
+    <button class="filter" data-category="Recherche">Recherche</button>
   </div>
 
   <div class="grid" id="grid">
 
+    <!-- 1 -->
     <article class="prompt-card" data-category="Productivité">
       <span class="category">Productivité</span>
       <h3>Prompt efficace</h3>
-      <p class="description">Obtenez des réponses précises, structurées et pertinentes avec l'IA.</p>
+      <p class="description">Obtiens des réponses précises, structurées et pertinentes avec l'IA.</p>
       <details>
         <summary>Voir le prompt →</summary>
         <div class="prompt-text">Agis comme un expert dans le domaine de ma demande.
@@ -232,10 +260,11 @@ Ma demande : [ÉCRIRE ICI]</div>
       </details>
     </article>
 
+    <!-- 2 -->
     <article class="prompt-card" data-category="Rédaction">
       <span class="category">Rédaction</span>
       <h3>Rédacteur professionnel</h3>
-      <p class="description">Transformez vos idées en textes fluides et professionnels.</p>
+      <p class="description">Transforme tes idées en textes fluides et professionnels.</p>
       <details>
         <summary>Voir le prompt →</summary>
         <div class="prompt-text">Tu es un rédacteur professionnel expérimenté.
@@ -251,10 +280,11 @@ Voici mon texte : [ÉCRIRE ICI]</div>
       </details>
     </article>
 
+    <!-- 3 -->
     <article class="prompt-card" data-category="Marketing">
       <span class="category">Marketing</span>
       <h3>Stratège marketing</h3>
-      <p class="description">Construisez une stratégie marketing claire et efficace.</p>
+      <p class="description">Construis une stratégie marketing claire et efficace.</p>
       <details>
         <summary>Voir le prompt →</summary>
         <div class="prompt-text">Agis comme un expert en marketing digital.
@@ -270,10 +300,11 @@ Mon projet : [DÉCRIRE ICI]</div>
       </details>
     </article>
 
+    <!-- 4 -->
     <article class="prompt-card" data-category="IA">
       <span class="category">Intelligence artificielle</span>
       <h3>Expert en IA</h3>
-      <p class="description">Utilisez l'IA comme un véritable assistant spécialisé.</p>
+      <p class="description">Utilise l'IA comme un véritable assistant spécialisé.</p>
       <details>
         <summary>Voir le prompt →</summary>
         <div class="prompt-text">Agis comme un spécialiste de l'intelligence artificielle.
@@ -287,14 +318,184 @@ Mon objectif : [ÉCRIRE ICI]</div>
       </details>
     </article>
 
+    <!-- 5 -->
+    <article class="prompt-card" data-category="Programmation">
+      <span class="category">Programmation</span>
+      <h3>Développeur expert</h3>
+      <p class="description">Obtiens de l'aide pour coder comme un développeur professionnel.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un développeur senior expert dans le langage de programmation que je vais te préciser.
+
+Analyse mon besoin et propose une solution propre, optimisée et sécurisée.
+
+Explique chaque étape de ton code et signale les éventuelles erreurs.
+
+Technologie : [LANGAGE]
+Mon projet : [PROJET]
+Mon objectif : [OBJECTIF]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <!-- 6 -->
+    <article class="prompt-card" data-category="Études">
+      <span class="category">Études</span>
+      <h3>Professeur particulier</h3>
+      <p class="description">Apprends n'importe quelle matière avec une méthode adaptée.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un excellent professeur particulier.
+
+Explique-moi le sujet suivant avec des mots simples et des exemples concrets.
+
+Commence par les bases, puis augmente progressivement la difficulté.
+
+Termine par un petit quiz pour vérifier ma compréhension.
+
+Matière : [MATIÈRE]
+Sujet : [SUJET]
+Mon niveau : [NIVEAU]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <!-- 7 -->
+    <article class="prompt-card" data-category="Créativité">
+      <span class="category">Créativité</span>
+      <h3>Générateur d'idées</h3>
+      <p class="description">Trouve des idées originales et créatives pour tes projets.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Tu es un directeur créatif reconnu pour ton imagination.
+
+Génère 15 idées originales autour de mon projet.
+
+Évite les idées trop classiques et privilégie les concepts innovants, réalisables et mémorables.
+
+Pour chaque idée, donne un titre, une description et son principal avantage.
+
+Mon projet : [PROJET]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <!-- 8 -->
+    <article class="prompt-card" data-category="Business">
+      <span class="category">Business</span>
+      <h3>Créateur de business</h3>
+      <p class="description">Transforme une idée en véritable projet entrepreneurial.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un entrepreneur expérimenté et un consultant en stratégie.
+
+Analyse mon idée de business.
+
+Identifie les clients potentiels, les concurrents, les coûts, les sources de revenus et les risques.
+
+Construis un plan d'action réaliste pour lancer ce projet étape par étape.
+
+Mon idée : [IDÉE]
+Mon budget : [BUDGET]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <!-- 9 -->
+    <article class="prompt-card" data-category="Réseaux sociaux">
+      <span class="category">Réseaux sociaux</span>
+      <h3>Expert réseaux sociaux</h3>
+      <p class="description">Crée du contenu captivant pour développer ton audience.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un expert en stratégie de réseaux sociaux.
+
+Crée une stratégie de contenu pour développer mon audience.
+
+Propose 10 publications avec des accroches puissantes, des idées de visuels et des appels à l'action.
+
+Adapte le contenu à ma cible et à ma plateforme.
+
+Plateforme : [TIKTOK / INSTAGRAM / YOUTUBE]
+Thématique : [THÈME]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <!-- 10 -->
+    <article class="prompt-card" data-category="Recherche">
+      <span class="category">Recherche</span>
+      <h3>Analyste professionnel</h3>
+      <p class="description">Analyse un sujet en profondeur et organise les informations.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un analyste spécialisé dans la recherche.
+
+Étudie le sujet que je vais te donner.
+
+Présente les faits importants, les différentes perspectives, les avantages, les inconvénients et les limites des informations disponibles.
+
+Distingue clairement les faits vérifiés des hypothèses.
+
+Ajoute des sources fiables lorsque tu en utilises.
+
+Sujet : [SUJET]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <!-- 11 -->
+    <article class="prompt-card" data-category="Productivité">
+      <span class="category">Productivité</span>
+      <h3>Organisation ultime</h3>
+      <p class="description">Organise tes journées et gagne du temps.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un coach expert en organisation et productivité.
+
+Aide-moi à organiser mes journées de manière intelligente.
+
+Classe mes tâches par priorité, estime le temps nécessaire et construis un planning réaliste.
+
+Prévois des pauses et évite de surcharger mon emploi du temps.
+
+Mes tâches : [TÂCHES]
+Mes disponibilités : [HORAIRES]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <!-- 12 -->
+    <article class="prompt-card" data-category="Rédaction">
+      <span class="category">Rédaction</span>
+      <h3>Copywriter professionnel</h3>
+      <p class="description">Écris des textes convaincants qui captent l'attention.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un copywriter professionnel spécialisé dans la persuasion.
+
+Rédige un texte captivant qui attire l'attention dès la première phrase.
+
+Mets en avant les bénéfices, utilise un langage naturel et termine par un appel à l'action efficace.
+
+Évite les promesses exagérées.
+
+Produit ou service : [PRODUIT]
+Public cible : [CLIENTS]
+Objectif : [OBJECTIF]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
   </div>
+
   <div class="empty" id="empty">Aucun prompt trouvé.</div>
 </main>
 
 <footer>
-  <div class="logo">PROMPT<span>CLEAN</span></div>
+  <div class="logo">SASORI'S <span>PROMPT</span></div>
   <p>Des prompts de qualité. De meilleures réponses.</p>
-  © 2026 Promptclean — Tous droits réservés.
+  © 2026 Sasori's Prompt — Tous droits réservés.
 </footer>
 
 <script>
@@ -303,45 +504,53 @@ let category = "Tous";
 const search = document.getElementById("search");
 const cards = [...document.querySelectorAll(".prompt-card")];
 
-function filterCards() {
+function filterCards(){
   const query = search.value.toLowerCase();
   let count = 0;
 
   cards.forEach(card => {
     const matchesCategory =
       category === "Tous" || card.dataset.category === category;
-    const matchesSearch = card.innerText.toLowerCase().includes(query);
+    const matchesSearch =
+      card.innerText.toLowerCase().includes(query);
     const visible = matchesCategory && matchesSearch;
 
     card.style.display = visible ? "block" : "none";
-    if (visible) count++;
+    if(visible) count++;
   });
 
   document.getElementById("empty").style.display =
     count ? "none" : "block";
+
+  document.getElementById("count").textContent = count;
 }
 
 document.querySelectorAll(".filter").forEach(button => {
   button.addEventListener("click", () => {
     category = button.dataset.category;
+
     document.querySelectorAll(".filter").forEach(b =>
       b.classList.remove("active")
     );
+
     button.classList.add("active");
     filterCards();
   });
 });
 
-search.addEventListener("input", filterCards);
+search.addEventListener("input",filterCards);
 
 document.querySelectorAll(".copy").forEach(button => {
-  button.addEventListener("click", async () => {
+  button.addEventListener("click",async()=>{
     const text = button.parentElement.querySelector(".prompt-text").innerText;
-    try {
+
+    try{
       await navigator.clipboard.writeText(text);
       button.innerText = "✓ Prompt copié !";
-      setTimeout(() => button.innerText = "Copier le prompt", 1800);
-    } catch {
+      setTimeout(()=>{
+        button.innerText = "Copier le prompt";
+      },1800);
+    }catch{
       button.innerText = "Copie non disponible";
     }
   });
@@ -350,4 +559,3 @@ document.querySelectorAll(".copy").forEach(button => {
 
 </body>
 </html>
-
