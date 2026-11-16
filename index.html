@@ -112,3 +112,353 @@ Tu peux reconnaître qu'une idée est excellente, mais uniquement si ton analyse
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promptclean — Bibliothèque de prompts</title>
+<style>
+:root {
+  --bg: #09090f;
+  --card: #14141f;
+  --border: #29293b;
+  --purple: #9b7bff;
+  --text: #f5f3ff;
+  --muted: #9694aa;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+}
+header {
+  padding: 22px 8%;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.logo span { color: var(--purple); }
+header small { color: var(--muted); }
+.hero {
+  text-align: center;
+  padding: 85px 20px 55px;
+}
+.tag {
+  color: #c4b4ff;
+  background: #21183b;
+  padding: 9px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+}
+h1 {
+  font-size: clamp(38px, 7vw, 65px);
+  letter-spacing: -3px;
+  margin: 28px 0 15px;
+}
+h1 span {
+  background: linear-gradient(90deg,#a78bfa,#e0b7ff);
+  color: transparent;
+  background-clip: text;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.search {
+  margin: 30px auto 0;
+  max-width: 520px;
+}
+.search input {
+  width: 100%;
+  padding: 17px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: white;
+  outline: none;
+  font-size: 15px;
+}
+.search input:focus { border-color: var(--purple); }
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+.section-title {
+  font-size: 23px;
+  margin: 20px 0;
+}
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.filter {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: #bbb8ca;
+  padding: 10px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.filter.active, .filter:hover {
+  background: #33235b;
+  color: white;
+  border-color: var(--purple);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+  gap: 18px;
+}
+.prompt-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 23px;
+  transition: .2s;
+}
+.prompt-card:hover {
+  transform: translateY(-4px);
+  border-color: #8064d9;
+}
+.category {
+  color: #bba6ff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.prompt-card h3 {
+  font-size: 20px;
+  margin: 13px 0 9px;
+}
+.description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 45px;
+}
+details { margin-top: 18px; }
+summary {
+  cursor: pointer;
+  color: #c8b7ff;
+  font-size: 14px;
+}
+.prompt-text {
+  white-space: pre-wrap;
+  background: #0c0c15;
+  padding: 15px;
+  border-radius: 10px;
+  color: #ded9ef;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 14px;
+}
+.copy {
+  width: 100%;
+  border: 0;
+  padding: 12px;
+  border-radius: 9px;
+  margin-top: 12px;
+  background: linear-gradient(90deg,#8059db,#a47bff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.copy:hover { opacity: .85; }
+.empty {
+  display: none;
+  color: var(--muted);
+  padding: 35px;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  padding: 45px 15px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 70px;
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">PROMPT<span>CLEAN</span></div>
+  <small>La bibliothèque de prompts IA</small>
+</header>
+
+<section class="hero">
+  <span class="tag">✦ LA BIBLIOTHÈQUE DE L'INTELLIGENCE ARTIFICIELLE</span>
+  <h1>Trouvez le <span>prompt parfait.</span></h1>
+  <p>Des prompts soigneusement sélectionnés pour exploiter<br>
+  tout le potentiel de l'intelligence artificielle.</p>
+  <div class="search">
+    <input id="search" type="text"
+    placeholder="⌕ Rechercher un prompt...">
+  </div>
+</section>
+
+<main>
+  <h2 class="section-title">Explorer les prompts</h2>
+
+  <div class="filters">
+    <button class="filter active" data-category="Tous">Tous</button>
+    <button class="filter" data-category="Productivité">Productivité</button>
+    <button class="filter" data-category="Rédaction">Rédaction</button>
+    <button class="filter" data-category="Marketing">Marketing</button>
+    <button class="filter" data-category="IA">Intelligence artificielle</button>
+  </div>
+
+  <div class="grid" id="grid">
+
+    <article class="prompt-card" data-category="Productivité">
+      <span class="category">Productivité</span>
+      <h3>Prompt efficace</h3>
+      <p class="description">Obtenez des réponses précises, structurées et pertinentes avec l'IA.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un expert dans le domaine de ma demande.
+
+Ton objectif est de me fournir une réponse claire, précise et structurée.
+
+Avant de répondre, analyse ma demande et identifie les informations essentielles.
+
+Présente ta réponse de manière professionnelle, avec des exemples concrets et des conseils applicables.
+
+Ma demande : [ÉCRIRE ICI]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <article class="prompt-card" data-category="Rédaction">
+      <span class="category">Rédaction</span>
+      <h3>Rédacteur professionnel</h3>
+      <p class="description">Transformez vos idées en textes fluides et professionnels.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Tu es un rédacteur professionnel expérimenté.
+
+Réécris le texte que je vais te donner pour le rendre naturel, fluide et captivant.
+
+Respecte le sens original, améliore la structure et élimine les répétitions.
+
+Adapte le ton au public visé.
+
+Voici mon texte : [ÉCRIRE ICI]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <article class="prompt-card" data-category="Marketing">
+      <span class="category">Marketing</span>
+      <h3>Stratège marketing</h3>
+      <p class="description">Construisez une stratégie marketing claire et efficace.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un expert en marketing digital.
+
+Aide-moi à construire une stratégie marketing complète.
+
+Analyse mon produit, mon audience cible, mes concurrents et mes objectifs.
+
+Propose des actions concrètes, organisées par priorité, avec des exemples.
+
+Mon projet : [DÉCRIRE ICI]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+    <article class="prompt-card" data-category="IA">
+      <span class="category">Intelligence artificielle</span>
+      <h3>Expert en IA</h3>
+      <p class="description">Utilisez l'IA comme un véritable assistant spécialisé.</p>
+      <details>
+        <summary>Voir le prompt →</summary>
+        <div class="prompt-text">Agis comme un spécialiste de l'intelligence artificielle.
+
+Explique-moi comment utiliser les meilleurs outils d'IA pour atteindre mon objectif.
+
+Compare les différentes possibilités, explique leurs avantages et propose une méthode étape par étape.
+
+Mon objectif : [ÉCRIRE ICI]</div>
+        <button class="copy">Copier le prompt</button>
+      </details>
+    </article>
+
+  </div>
+  <div class="empty" id="empty">Aucun prompt trouvé.</div>
+</main>
+
+<footer>
+  <div class="logo">PROMPT<span>CLEAN</span></div>
+  <p>Des prompts de qualité. De meilleures réponses.</p>
+  © 2026 Promptclean — Tous droits réservés.
+</footer>
+
+<script>
+let category = "Tous";
+
+const search = document.getElementById("search");
+const cards = [...document.querySelectorAll(".prompt-card")];
+
+function filterCards() {
+  const query = search.value.toLowerCase();
+  let count = 0;
+
+  cards.forEach(card => {
+    const matchesCategory =
+      category === "Tous" || card.dataset.category === category;
+    const matchesSearch = card.innerText.toLowerCase().includes(query);
+    const visible = matchesCategory && matchesSearch;
+
+    card.style.display = visible ? "block" : "none";
+    if (visible) count++;
+  });
+
+  document.getElementById("empty").style.display =
+    count ? "none" : "block";
+}
+
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    category = button.dataset.category;
+    document.querySelectorAll(".filter").forEach(b =>
+      b.classList.remove("active")
+    );
+    button.classList.add("active");
+    filterCards();
+  });
+});
+
+search.addEventListener("input", filterCards);
+
+document.querySelectorAll(".copy").forEach(button => {
+  button.addEventListener("click", async () => {
+    const text = button.parentElement.querySelector(".prompt-text").innerText;
+    try {
+      await navigator.clipboard.writeText(text);
+      button.innerText = "✓ Prompt copié !";
+      setTimeout(() => button.innerText = "Copier le prompt", 1800);
+    } catch {
+      button.innerText = "Copie non disponible";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+
